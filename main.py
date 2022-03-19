@@ -12,7 +12,12 @@ class Auto:
         self.registro = registro
     #creacion de metodos
     def cantidadAsientos(self):
-        return len(self.asientos)
+        total = 0
+        for i in self.asientos:
+            verificar = type(i) == Asiento
+            if verificar == True:
+                total += 1
+        return total
 
     def verificarIntegridad(self):
         for i in self.asientos:
